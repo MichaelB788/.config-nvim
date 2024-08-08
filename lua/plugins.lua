@@ -21,12 +21,13 @@ return require('packer').startup(function(use)
     -- Fugitive: Git commands
     use 'tpope/vim-fugitive'
 
+    -- Signify: show git changes
+    use 'mhinz/vim-signify'
 
-
-
-
-
-
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 
 -- Examples:
 

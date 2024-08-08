@@ -36,10 +36,13 @@ vim.keymap.set('i', '<C-l>', '<Right>') -- Move cursor right
 
 vim.keymap.set('i', '<C-d>', '<Del>') -- Delete key
 
+-- Markdown
+vim.keymap.set('n', 'mp', ':MarkdownPreview<Enter>') -- Enter preview
+
 -- Misc.
-vim.keymap.set('n', '<leader>', ':e ++ff=dos<Enter>') -- Clear the ^M's after paste
+vim.keymap.set('n', '<leader>M', ':e ++ff=dos<Enter>') -- Clear the ^M's after paste
 vim.keymap.set('n', 'tg', 'gT') -- Reverse switch tabs
 
 -- Telescope
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {}) -- Find files
-vim.keymap.set('n', '<leader>fg', builtin.git_files, {}) -- Fuzzy finding (search through git)
+vim.keymap.set('n', '<leader>fg', builtin.git_files, {}) -- Find files within a git repository.

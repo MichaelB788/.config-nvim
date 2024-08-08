@@ -1,4 +1,5 @@
 local opt = vim.o
+opt.autochdir = true
 
 -- line numbers
 opt.relativenumber = true
