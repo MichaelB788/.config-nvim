@@ -3,6 +3,13 @@
 vim.g.mapleader = " "
 local builtin = require('telescope.builtin')
 
+-- Telescope
+vim.keymap.set('n', 'K', 'gg')
+vim.keymap.set('n', 'J', 'G')
+
+vim.keymap.set('n', '<leader>ff', builtin.find_files, {}) -- Find files
+vim.keymap.set('n', '<leader>fg', builtin.git_files, {}) -- Find files within a git repository.
+
 -- Yank into system clipboard
 vim.keymap.set({'n', 'v'}, '<leader>y', '"+y') -- yank motion
 vim.keymap.set({'n', 'v'}, '<leader>Y', '"+Y') -- yank line
@@ -43,6 +50,3 @@ vim.keymap.set('n', 'mp', ':MarkdownPreview<Enter>') -- Enter preview
 vim.keymap.set('n', '<leader>M', ':e ++ff=dos<Enter>') -- Clear the ^M's after paste
 vim.keymap.set('n', 'tg', 'gT') -- Reverse switch tabs
 
--- Telescope
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {}) -- Find files
-vim.keymap.set('n', '<leader>fg', builtin.git_files, {}) -- Find files within a git repository.
