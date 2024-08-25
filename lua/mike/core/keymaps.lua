@@ -1,52 +1,59 @@
 -- For help on key notation, type :h key-notation
-
+-- Globals
 vim.g.mapleader = " "
+
+local km = vim.keymap;
 local builtin = require('telescope.builtin')
 
+-- Plugin Keymaps
 -- Telescope
-vim.keymap.set('n', 'K', 'gg')
-vim.keymap.set('n', 'J', 'G')
+km.set('n', '<leader>ff', builtin.find_files, {}) -- Find ALL files
+km.set('n', '<leader>fg', builtin.git_files, {}) -- Find files within a git repository.
 
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {}) -- Find files
-vim.keymap.set('n', '<leader>fg', builtin.git_files, {}) -- Find files within a git repository.
+-- nvim-tree
+km.set('n', '<leader>e', ':NvimTreeFindFileToggle<Enter>') -- Toggle tree (find files within current directory)
+km.set('n', '<leader><BS>', ':NvimTreeCollapse<Enter>') -- Collapse tree
 
--- Yank into system clipboard
-vim.keymap.set({'n', 'v'}, '<leader>y', '"+y') -- yank motion
-vim.keymap.set({'n', 'v'}, '<leader>Y', '"+Y') -- yank line
-
-vim.keymap.set({'n', 'v'}, '<leader>a', ':%y+<Enter>') -- yank all
-
--- Delete into system clipboard
-vim.keymap.set({'n', 'v'}, '<leader>d', '"+d') -- delete motion
-vim.keymap.set({'n', 'v'}, '<leader>D', '"+D') -- delete line
-
--- Paste from system clipboard
-vim.keymap.set('n', '<leader>p', '"+p')  -- paste after cursor
-vim.keymap.set('n', '<leader>P', '"+P')  -- paste before cursor
-
--- Enter explorer GUI
-vim.keymap.set('n', '<leader>e', ':Ex<Enter>') -- Open Explorer in current tab
-vim.keymap.set('n', '<leader>t', ':tabnew | :Ex <Enter>') -- Open Explorer in a new tab
-
--- Write and Quit
-vim.keymap.set({'n', 'v'}, '<leader>w', ':wall<Enter>') -- Write all
-vim.keymap.set({'n', 'v'}, '<leader>q', ':q!<Enter>') -- Write and close the current tab
-
--- Autocomplete
-vim.keymap.set('i', '<C- >', '<C-p>')
-
--- Insert Mode commands
-vim.keymap.set('i', '<C-h>', '<Left>') -- Move cursor left
-vim.keymap.set('i', '<C-j>', '<Down>') -- Move cursor down
-vim.keymap.set('i', '<C-k>', '<Up>') -- Move cursor up 
-vim.keymap.set('i', '<C-l>', '<Right>') -- Move cursor right
-
-vim.keymap.set('i', '<C-d>', '<Del>') -- Delete key
+km.set('n', '<leader>t', ':tabnew | :NvimTreeToggle<Enter>') -- Open a new tab with tree opened.
+km.set('n', 'sp', ':vsplit | :NvimTreeToggle<Enter>') -- Split the window with tree opened.
 
 -- Markdown
-vim.keymap.set('n', 'mp', ':MarkdownPreview<Enter>') -- Enter preview
+km.set('n', 'mp', ':MarkdownPreview<Enter>') -- Enter preview
+
+-- Trouble
+km.set('n', 'to', ':Trouble diagnostics <Enter>') -- Open diagnostics
+km.set('n', 'tp', ':Trouble diagnostics close<Enter>') -- Open diagnostics
+
+km.set('n', 'qf', ':Trouble quickfix<Enter>') -- Quickfix 
+
+
+-- Editor keymaps
+
+-- Yank into system clipboard
+km.set('n', 'yy', '"+Y') -- normal mode; yank single line
+km.set('v', 'yy', '"+y') -- yank visual motion
+km.set('n', '<leader>a', ':%y+<Enter>') -- yank all
+
+-- Paste from system clipboard
+km.set('n', 'p', '"+p')  -- paste after cursor
+km.set('n', 'P', '"+P') -- paste before cursor
+
+-- Cut motion
+km.set('v', 'd', '"+d"')
+
+-- Write and Quit
+km.set({'n', 'v'}, '<leader>w', ':wall<Enter>') -- Write all
+km.set({'n', 'v'}, '<leader>q', ':q!<Enter>') -- Close the current tab
+
+-- Insert Mode commands
+km.set('i', '<C-h>', '<Left>') -- Move cursor left
+km.set('i', '<C-j>', '<Down>') -- Move cursor down
+km.set('i', '<C-k>', '<Up>') -- Move cursor up 
+km.set('i', '<C-l>', '<Right>') -- Move cursor right
+
+km.set('i', '<C-d>', '<Del>') -- Delete key
 
 -- Misc.
-vim.keymap.set('n', '<leader>M', ':e ++ff=dos<Enter>') -- Clear the ^M's after paste
-vim.keymap.set('n', 'tg', 'gT') -- Reverse switch tabs
-
+km.set('n', '<leader>M', ':e ++ff=dos<Enter>') -- Reread the document using dos
+km.set('n', 'tg', 'gT') -- Reverse switch tabs
+km.set('n', 'w', '<C-w>') -- Window toggle
