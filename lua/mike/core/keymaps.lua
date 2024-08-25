@@ -14,21 +14,18 @@ km.set('n', '<leader>fg', builtin.git_files, {}) -- Find files within a git repo
 km.set('n', '<leader>e', ':NvimTreeFindFileToggle<Enter>') -- Toggle tree (find files within current directory)
 km.set('n', '<leader><BS>', ':NvimTreeCollapse<Enter>') -- Collapse tree
 
-km.set('n', '<leader>t', ':tabnew | :NvimTreeToggle<Enter>') -- Open a new tab with tree opened.
-km.set('n', 'sp', ':vsplit | :NvimTreeToggle<Enter>') -- Split the window with tree opened.
+km.set('n', '<leader>tn', ':tabnew | :NvimTreeToggle<Enter>') -- Open a new tab with tree opened.
+km.set('n', '<leader>sp', ':vsplit | :NvimTreeToggle<Enter>') -- Split the window with tree opened.
 
 -- Markdown
 km.set('n', 'mp', ':MarkdownPreview<Enter>') -- Enter preview
 
 -- Trouble
-km.set('n', 'to', ':Trouble diagnostics <Enter>') -- Open diagnostics
-km.set('n', 'tp', ':Trouble diagnostics close<Enter>') -- Open diagnostics
-
-km.set('n', 'qf', ':Trouble quickfix<Enter>') -- Quickfix 
+km.set('n', '<leader>td', ':Trouble diagnostics <Enter>') -- Open diagnostics
+km.set('n', '<leader>tc', ':Trouble diagnostics close<Enter>') -- Open diagnostics
 
 
 -- Editor keymaps
-
 -- Yank into system clipboard
 km.set('n', 'yy', '"+Y') -- normal mode; yank single line
 km.set('v', 'yy', '"+y') -- yank visual motion
