@@ -20,11 +20,6 @@ km.set('n', '<leader>sp', ':vsplit | :NvimTreeToggle<Enter>') -- Split the windo
 -- Markdown
 km.set('n', 'mp', ':MarkdownPreview<Enter>') -- Enter preview
 
--- Trouble
-km.set('n', '<leader>td', ':Trouble diagnostics <Enter>') -- Open diagnostics
-km.set('n', '<leader>tc', ':Trouble diagnostics close<Enter>') -- Open diagnostics
-
-
 -- Editor keymaps
 -- Yank into system clipboard
 km.set('n', 'yy', '"+Y') -- normal mode; yank single line
