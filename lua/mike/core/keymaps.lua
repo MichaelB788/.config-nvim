@@ -14,9 +14,6 @@ km.set('n', '<leader>fg', builtin.git_files, {}) -- Find files within a git repo
 km.set('n', '<leader>e', ':NvimTreeFindFileToggle<Enter>') -- Toggle tree (find files within current directory)
 km.set('n', '<leader><BS>', ':NvimTreeCollapse<Enter>') -- Collapse tree
 
-km.set('n', '<leader>tn', ':tabnew | :NvimTreeToggle<Enter>') -- Open a new tab with tree opened.
-km.set('n', '<leader>sp', ':vsplit | :NvimTreeToggle<Enter>') -- Split the window with tree opened.
-
 -- Markdown
 km.set('n', 'mp', ':MarkdownPreview<Enter>') -- Enter preview
 
@@ -44,6 +41,10 @@ km.set('i', '<C-k>', '<Up>') -- Move cursor up
 km.set('i', '<C-l>', '<Right>') -- Move cursor right
 
 km.set('i', '<C-d>', '<Del>') -- Delete key
+
+-- Window/Tab Management
+km.set('n', '<leader>tn', ':tabnew<Enter>') -- Open a new tab.
+km.set('n', '<leader>sp', ':vsplit<Enter>') -- Split the window vertically.
 
 -- Misc.
 km.set('n', '<leader>M', ':e ++ff=dos<Enter>') -- Reread the document using dos
