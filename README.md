@@ -1,5 +1,24 @@
 ## .config/nvim
 
-This repository was created in order to offer an ease-of-access config which can be distributed easily across multiple platforms.
+### Plugins Used
 
-This repository is purely for my own convienience. It's a humble config, but it's my own and all I need.
+**img-clip**: Great for copy pasting images in Markdown files.
+
+**kanagawa**: Nice editor colorscheme.
+	
+**lsp-zero**: Minimal setup for LSP usage.
+Comes with the following:
+- Mason
+- nvim-cmp
+- LuaSnip
+- More!
+	
+**markdown_preview**: For viewing Markdown files.
+	
+**nvim-tree**: Better than Netrw!
+	
+**telescope**: Find files with ease.
+	
+**treesitter**: Syntax highlighting. Very pretty!
+	
+**trouble**: I love catching bugs.
